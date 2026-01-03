@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000 !important;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Make ALL text black by default */
+input,
+select,
+textarea,
+button,
+label,
+p,
+h1, h2, h3, h4, h5, h6,
+span,
+div {
+  color: #000 !important;
+}
+
+::placeholder {
+  color: #666 !important;
+}

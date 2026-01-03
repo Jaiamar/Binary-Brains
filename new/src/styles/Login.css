@@ -1,0 +1,410 @@
+/* FIX 1: Force full-screen layout */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Login Page Container */
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* FIX 2: Main container with background applied to FULL PAGE */
+.main-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("/assets/beach.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+  position: relative;
+}
+
+/* Add overlay for better text readability */
+.main-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+  z-index: 0;
+}
+
+/* Hero text section */
+.hero-text {
+  flex: 1;
+  min-width: 0;
+  color: #1f4e55;
+  padding-right: 40px;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-text .script {
+  font-family: "Pacifico", cursive;
+  font-size: 48px;
+  color: #f39c12;
+  display: block;
+  margin-bottom: -10px;
+}
+
+.hero-text h1 {
+  font-size: 120px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text .subtitle {
+  font-size: 20px;
+  color: #2c3e50;
+  max-width: 500px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* FIX 5: Auth card with proper alignment */
+.auth-card {
+  width: 420px;
+  max-width: 90%;
+  min-width: 380px;
+  margin-right: 0;
+  z-index: 1;
+}
+
+/* Glass card */
+.glass-card {
+  width: 100%;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #1f4e55;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid #f1c27d;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box .eye {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+.forgot {
+  display: block;
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #e74c3c;
+  cursor: pointer;
+  text-align: right;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgot:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.primary-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #1f4e55;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #16373c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(31, 78, 85, 0.4);
+}
+
+.social {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: 2px solid #f1c27d;
+  background: white;
+  font-size: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social:hover {
+  background: #f9f9f9;
+  border-color: #f39c12;
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.google .social-icon {
+  color: #db4437;
+}
+
+.facebook .social-icon {
+  color: #1877f2;
+}
+
+/* Divider */
+.divider {
+  margin: 25px 0;
+  text-align: center;
+  position: relative;
+  color: #555;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 30%;
+  background: #ddd;
+  position: absolute;
+  top: 50%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.divider span {
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 15px;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  color: #333;
+}
+
+.text-link {
+  background: none;
+  border: none;
+  color: #1f4e55;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 15px;
+}
+
+.text-link:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+/* Demo login section */
+.demo-login {
+  margin-top: 25px;
+  padding: 15px;
+  background: rgba(31, 78, 85, 0.1);
+  border-radius: 12px;
+  border-left: 4px solid #f39c12;
+}
+
+.demo-login p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.demo-login strong {
+  color: #1f4e55;
+}
+
+.demo-btn {
+  width: 100%;
+  padding: 10px;
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.demo-btn:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+}
+
+/* Loading Screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f4e55, #0f3d3e);
+  color: white;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #f39c12;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 90px;
+  }
+  
+  .hero-text .script {
+    font-size: 40px;
+  }
+  
+  .main-container {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  .hero-text {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  
+  .hero-text h1 {
+    font-size: 70px;
+  }
+  
+  .hero-text .script {
+    font-size: 36px;
+  }
+  
+  .hero-text .subtitle {
+    font-size: 18px;
+    max-width: 100%;
+  }
+  
+  .auth-card {
+    width: 100%;
+    max-width: 420px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 20px;
+  }
+  
+  .hero-text h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+  }
+  
+  .hero-text .script {
+    font-size: 30px;
+  }
+  
+  .glass-card {
+    padding: 30px 20px;
+  }
+  
+  .glass-card h2 {
+    font-size: 28px;
+  }
+}

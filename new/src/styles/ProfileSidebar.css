@@ -1,0 +1,140 @@
+.profile-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background: #0f3d3e;
+  color: white !important;
+  z-index: 1000;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 30px 25px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white !important;
+  font-size: 28px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 0;
+  transition: opacity 0.3s;
+}
+
+.close-btn:hover {
+  opacity: 0.8;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-avatar {
+  font-size: 32px;
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  color: white !important;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.user-email {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 15px 25px;
+  background: transparent;
+  border: none;
+  color: white !important;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: left;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+.menu-text {
+  flex: 1;
+}
+
+.menu-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 20px 25px;
+}
+
+.logout-btn {
+  background: rgba(224, 177, 92, 0.2);
+  margin: 20px 25px;
+  border-radius: 10px;
+}
+
+.logout-btn:hover {
+  background: #e0b15c;
+  color: #0f3d3e !important;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 20px 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-version {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .profile-sidebar {
+    width: 100%;
+  }
+}
