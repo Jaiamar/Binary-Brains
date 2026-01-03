@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "GlobeTrotterDB",
+            "database": "globetrotter.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
